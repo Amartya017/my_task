@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head runat = "Server">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasks</title>
+    <title>Task Manager</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <script src = "main.js"></script>
+    <link rel="font-awesome" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script type="text/javascript" src = "main.js"></script>
 </head>
-<body>
-    <h1 class="one">Tasks<style> .one{ text-align: center}</style></h1>
+<body onload="myfunction2()">
+    <h1 class="one">Task Manager<style> .one{ text-align: center}</style></h1>
     <div class="card">
-        <div class="container">
-          <h4><b>To do</b></h4>
-          <button class="plus">+</button>
+        <h4><b>To do</b></h4>
+        <div id="dt" class="container">
+          <table id="table" class="clstable">
+            <caption class="cp">Please Complete the following tasks as per the deadline.</caption>
+            <thead>
+                <tr>
+                    <th scope="col">S.NO</th>
+                    <th scope="col">Assigned By</th>
+                    <th scope="col">Task Description</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Team Leader</td>
+                    <td>Finish the SRS document</td>
+                    <td>22/7/2022</td>
+                    <td>Pending</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="cm2" >
+            <input type="button" id="cm" class="changevalue" onclick="myfunction()"  value="Expand"/>
+            <!--<button class="changeicon"><i class="fa-solid fa-circle-plus">+</i></button>-->
         </div>
     </div>
     <div class = "card">
@@ -28,7 +54,7 @@
     </div>
     <div class = "card">
         <div class="container">
-            <h4><b>Task Assigned</b></h4>
+            <h4><b>Task Delegated</b></h4>
         </div>
     </div>
 
